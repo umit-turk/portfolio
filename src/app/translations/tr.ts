@@ -2,7 +2,7 @@ export const tr = {
     hero: {
       greeting: 'Merhaba, Ben',
       title: 'Full Stack Developer',
-      description: '5+ yıllık deneyimle modern web uygulamaları geliştiriyorum. JavaScript, React ve Node.js teknolojilerinde uzmanım.',
+      description: 'Dört yıllık yazılım geliştirme deneyimimle farklı sektörlerde birçok projede yer aldım. Çalıştığım sektörler arasında inşaat, sigorta, havacılık ve e-ticaret bulunmakta olup, hem bireysel (B2C) hem de kurumsal (B2B) çözümler geliştirme konusunda deneyim kazandım. Bunun yanı sıra, freelance projelerde aktif bir rol üstlenerek uçtan uca yazılım çözümleri geliştirdim. Kendi geliştirdiğim mobil uygulamalar, Google Play Store’da kullanıcıların beğenisine sunulmuş durumda. Çalışmalarımda kullanıcı odaklı tasarım ve yüksek kaliteli yazılım geliştirme standartlarına öncelik veriyorum. Yeni teknolojileri öğrenmeye ve projelerime yenilikçi çözümler entegre etmeye büyük önem veriyorum.',
       contact: 'İletişime Geç',
       projects: 'Projelerimi Gör'
     },

@@ -1,6 +1,6 @@
 <section id="experience" class="experience">
     <div class="section-content">
-      <h2>Deneyimlerim</h2>
+      <h2>{{ translationService.translate('nav.experience') }}</h2>
       <div class="timeline">
         <div class="timeline-item" *ngFor="let exp of experiences" data-aos="fade-up">
           <div class="timeline-dot"></div>
@@ -19,12 +19,12 @@
                 {{exp.location}}
               </span>
             </div>
-            <p class="description">{{exp.description}}</p>
+            <p class="description">{{exp.description[translationService.currentLang.value]}}</p>
             <ul class="responsibilities">
-              <li *ngFor="let resp of exp.responsibilities">{{resp}}</li>
+              <li *ngFor="let resp of exp.responsibilities[translationService.currentLang.value]">{{resp}}</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </section>
+</section>

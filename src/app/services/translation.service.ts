@@ -14,7 +14,7 @@ export class TranslationService {
     [Language.EN]: en
   };
 
-  private currentLang: BehaviorSubject<Language>;
+  public currentLang: BehaviorSubject<Language>;
   private isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
