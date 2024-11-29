@@ -1,0 +1,199 @@
+.experience {
+  
+    .section-content {
+      h2 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        text-align: center;
+        margin-bottom: 4rem;
+        color: var(--text-color);
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60px;
+          height: 3px;
+          background-color: var(--primary-color);
+        }
+      }
+  
+      .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 0;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(
+            to bottom,
+            var(--primary-color) 0%,
+            var(--secondary-color) 100%
+          );
+        }
+  
+        .timeline-item {
+          position: relative;
+          margin-bottom: 3rem;
+          width: calc(50% - 30px);
+          
+          &:nth-child(odd) {
+            left: 0;
+            .timeline-content { 
+              margin-right: 30px;
+            }
+          }
+          
+          &:nth-child(even) {
+            left: 50%;
+            .timeline-content {
+              margin-left: 30px;
+            }
+          }
+  
+          .timeline-dot {
+            position: absolute;
+            right: -43px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--bg-color);
+            z-index: 1;
+            
+            &:nth-child(even) {
+              left: -43px;
+            }
+          }
+  
+          .timeline-content {
+            background: var(--card-gradient);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease;
+            
+            &:hover {
+              transform: translateY(-5px);
+            }
+  
+            .timeline-header {
+              margin-bottom: 1rem;
+              
+              h3 {
+                font-size: 1.3rem;
+                color: var(--text-color);
+                margin-bottom: 0.5rem;
+              }
+              
+              .company {
+                color: var(--primary-color);
+                font-weight: 500;
+              }
+            }
+  
+            .timeline-info {
+              display: flex;
+              gap: 1.5rem;
+              margin-bottom: 1rem;
+              font-size: 0.9rem;
+              color: var(--text-color);
+              opacity: 0.8;
+  
+              span {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                
+                i {
+                  color: var(--primary-color);
+                }
+              }
+            }
+  
+            .description {
+              margin-bottom: 1rem;
+              line-height: 1.6;
+              color: var(--text-color);
+            }
+  
+            .responsibilities {
+              list-style: none;
+              padding-left: 0;
+              
+              li {
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: var(--text-color);
+                opacity: 0.9;
+                
+                &::before {
+                  content: '•';
+                  position: absolute;
+                  left: 0;
+                  color: var(--primary-color);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+  
+    .timeline {
+      padding: 1rem;
+  
+      &::before {
+        left: 15px !important;
+        transform: none !important;
+        background: linear-gradient(
+          to bottom,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        ) !important;
+      }
+  
+      .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        margin-bottom: 2rem;
+        padding-left: 45px;
+  
+        .timeline-dot {
+          left: 7px !important;
+          right: auto !important;
+          width: 14px !important;
+          height: 14px !important;
+        }
+  
+        .timeline-content {
+          margin: 0 !important;
+          padding: 1.2rem;
+  
+          .timeline-header {
+            h3 {
+              font-size: 1.1rem;
+            }
+          }
+  
+          .timeline-info {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }

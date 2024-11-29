@@ -1,0 +1,34 @@
+<header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="#home">
+          <span class="logo-text">Portfolio</span>
+        </a>
+      </div>
+  
+      <nav class="nav" [class.active]="isMenuOpen">
+        <ul class="nav-list">
+          <li><a href="#home">{{ translationService.translate('nav.home') }}</a></li>
+          <li><a href="#skills">{{ translationService.translate('nav.skills') }}</a></li>
+          <li><a href="#projects">{{ translationService.translate('nav.projects') }}</a></li>
+          <li><a href="#experience">{{ translationService.translate('nav.experience') }}</a></li>
+          <li><a href="#contact">{{ translationService.translate('nav.contact') }}</a></li>
+        </ul>
+      </nav>
+  
+      <div class="nav-actions">
+        <button class="lang-toggle" (click)="toggleLanguage()">
+          {{ currentLang === 'en' ? 'EN' : 'TR' }}
+        </button>
+        <button class="theme-toggle" (click)="toggleTheme()">
+          <i [class]="currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        </button>
+      </div>
+  
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>

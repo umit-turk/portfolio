@@ -1,0 +1,194 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--card-gradient);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 0;
+    transition: all 0.3s ease;
+  
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .logo {
+      a {
+        text-decoration: none;
+        
+        .logo-text {
+          font-size: 1.8rem;
+          font-weight: 700;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+  
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+  
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+  
+        a {
+          text-decoration: none;
+          color: var(--text-primary);
+          font-weight: 500;
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          transition: all 0.3s ease;
+          position: relative;
+  
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s ease;
+          }
+  
+          &:hover::after, &.active::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: var(--surface-color);
+        color: var(--primary-color);
+      }
+    }
+  
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+  
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: var(--text-color);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      .nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-color);
+        padding: 2rem;
+        flex-direction: column;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+  
+        &.active {
+          transform: translateY(0);
+        }
+  
+        .nav-list {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+      }
+  
+      .menu-toggle {
+        display: block;
+  
+        &.active {
+          .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+          }
+          .bar:nth-child(2) {
+            opacity: 0;
+          }
+          .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+          }
+        }
+      }
+    }
+  }
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  
+    .lang-toggle {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--text-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+    }
+  
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: var(--surface-color);
+        color: var(--primary-color);
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-actions {
+      margin-top: 1rem;
+      justify-content: center;
+    }
+  }

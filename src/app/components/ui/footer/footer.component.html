@@ -1,0 +1,43 @@
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Portfolio</h3>
+          <p>{{ translationService.translate('footer.description') }}</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>{{ translationService.translate('footer.menu') }}</h4>
+            <ul>
+              <li><a href="#home">{{ translationService.translate('nav.home') }}</a></li>
+              <li><a href="#skills">{{ translationService.translate('nav.skills') }}</a></li>
+              <li><a href="#projects">{{ translationService.translate('nav.projects') }}</a></li>
+              <li><a href="#experience">{{ translationService.translate('nav.experience') }}</a></li>
+              <li><a href="#contact">{{ translationService.translate('nav.contact') }}</a></li>
+            </ul>
+          </div>
+          
+          <div class="link-group">
+            <h4>{{ translationService.translate('footer.socialMedia') }}</h4>
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{currentYear}} Portfolio. {{ translationService.translate('footer.rights') }}</p>
+        <p class="developer-credit">{{ translationService.translate('footer.developer') }}</p>
+      </div>
+    </div>
+  </footer>

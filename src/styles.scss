@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e8ecf2 100%);
+  --card-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  --primary-color: #2563eb;
+  --secondary-color: #7c3aed;
+  --accent-color: #06b6d4;
+  --text-color: #1e293b;
+  --text-secondary: #64748b;
+  --surface-color: rgba(148, 163, 184, 0.1);
+  --card-color: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --skill-card-border: rgba(148, 163, 184, 0.2);
+  --primary-rgb: 14, 165, 233;
+  --secondary-rgb: 99, 102, 241;
+  --white-rgb: 255, 255, 255;
+  --section-padding-desktop: 4rem;
+  --section-padding-tablet: 3rem;
+  --section-padding-mobile: 2rem;
+  --container-padding-desktop: 2rem;
+  --container-padding-tablet: 1.5rem;
+  --container-padding-mobile: 1rem;
+  --heading-size: clamp(2rem, 5vw, 2.5rem);
+  --subheading-size: clamp(1.2rem, 3vw, 1.5rem);
+  --text-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --card-gradient: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+  --primary-color: #3b82f6;
+  --secondary-color: #8b5cf6;
+  --accent-color: #22d3ee;
+  --text-color: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --surface-color: rgba(148, 163, 184, 0.1);
+  --card-color: rgba(30, 41, 59, 0.8);
+  --card-border: rgba(148, 163, 184, 0.1);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --header-bg: rgba(15, 23, 42, 0.8);
+  --skill-card-border: rgba(148, 163, 184, 0.1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &.primary {
+    background: var(--primary-color);
+    color: white;
+    
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.skill-card {
+  background-color: var(--card-color) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  background-color: var(--surface-color) !important;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+  width: 100%;
+  padding: var(--section-padding-desktop) var(--container-padding-desktop);
+  
+  @media (max-width: 992px) {
+    padding: var(--section-padding-tablet) var(--container-padding-tablet);
+  }
+  
+  @media (max-width: 768px) {
+    padding: var(--section-padding-mobile) var(--container-padding-mobile);
+  }
+  
+  .section-content {
+    @extend .container;
+  }
+}
+
+.section-content {
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  font-size: var(--heading-size);
+  margin-bottom: clamp(2rem, 6vw, 4rem);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--container-padding);
+  }
+  
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}

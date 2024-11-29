@@ -1,0 +1,30 @@
+<section id="experience" class="experience">
+    <div class="section-content">
+      <h2>Deneyimlerim</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of experiences" data-aos="fade-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>{{exp.position}}</h3>
+              <span class="company">{{exp.company}}</span>
+            </div>
+            <div class="timeline-info">
+              <span class="period">
+                <i class="far fa-calendar-alt"></i>
+                {{exp.period}}
+              </span>
+              <span class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                {{exp.location}}
+              </span>
+            </div>
+            <p class="description">{{exp.description}}</p>
+            <ul class="responsibilities">
+              <li *ngFor="let resp of exp.responsibilities">{{resp}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
