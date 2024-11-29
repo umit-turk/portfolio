@@ -114,7 +114,10 @@
         top: 70px;
         left: 0;
         right: 0;
-        background-color: var(--bg-color);
+        background-color: var(--card-gradient);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
         padding: 2rem;
         flex-direction: column;
         transform: translateY(-150%);
@@ -122,6 +125,7 @@
   
         &.active {
           transform: translateY(0);
+          background: var(--card-gradient);
         }
   
         .nav-list {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Language } from '../../../enums/language.enum';
 import { TranslationService } from '../../../services/translation.service';
@@ -32,7 +32,25 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  toggleMenu() {
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (this.isMenuOpen && menuToggle && nav) {
+      const isClickInsideMenu = nav.contains(event.target as Node);
+      const isClickOnToggle = menuToggle.contains(event.target as Node);
+      
+      if (!isClickInsideMenu && !isClickOnToggle) {
+        this.isMenuOpen = false;
+      }
+    }
+  }
+
+  toggleMenu(event?: MouseEvent) {
+    if (event) {
+      event.stopPropagation();
+    }
     this.isMenuOpen = !this.isMenuOpen;
   }
 

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
 import { Experience } from '../../interfaces/experience.interface';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-experience',
@@ -10,8 +12,11 @@ import { Experience } from '../../interfaces/experience.interface';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent {
-  constructor(public translationService: TranslationService) {}
+export class ExperienceComponent implements OnInit, AfterViewInit {
+  constructor(
+    public translationService: TranslationService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   experiences: Experience[] = [
     {
@@ -93,4 +98,37 @@ export class ExperienceComponent {
       }
     }
   ];
+
+  ngOnInit() {
+    // mevcut kodlar...
+  }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initScrollAnimation();
+    }
+  }
+
+  private initScrollAnimation() {
+    const timeline = document.querySelector('.timeline');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          timeline?.classList.add('animate-line');
+          timelineItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('animate');
+            }, 500 + (index * 300));
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (timeline) {
+      observer.observe(timeline);
+    }
+  }
 }
