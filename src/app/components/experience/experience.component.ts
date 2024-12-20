@@ -22,7 +22,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
     {
       company: 'Yetiş+ Çarşı',
       position: 'Full Stack Javascript Developer',
-      period: '2024 - Present',
+      period: '2024 - 2025',
       location: 'İstanbul, Türkiye',
       description: {
         tr: 'E-ticaret platformu geliştirme ve yönetimi',
