@@ -102,6 +102,16 @@ export class ProjectsComponent {
       image: 'assets/projects/yetisplus.png',
       technologies: ['Next.js', 'Redux', 'Node.js', 'PostgreSQL', 'Prisma', 'Express'],
       demo: 'https://yetisplus.com/'
+    },
+    {
+      title: 'Beha Metal',
+      description: {
+        tr: 'Beha Metal, bir metal ürünleri satış platformudur. Kurumsal şirket için tasarlanmış bir platformdur.',
+        en: 'Beha Metal is a metal products sales platform. It is designed for corporate companies.'
+      },
+      image: 'assets/projects/beha-metal.png',
+      technologies: ['Next.js', 'Tailwind'],
+      demo: 'https://behametal.com'
     }
   ];
 
